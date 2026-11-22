@@ -43,6 +43,7 @@ public final class DownloaderImpl extends Downloader {
     private final OkHttpClient client;
 
     private DownloaderImpl(final OkHttpClient.Builder builder) {
+        builder.proxy(new java.net.Proxy(java.net.Proxy.Type.HTTP, new java.net.InetSocketAddress("127.0.0.1", 10909)));
         this.client = builder
                 .readTimeout(30, TimeUnit.SECONDS)
 //                .cache(new Cache(new File(context.getExternalCacheDir(), "okhttp"),

@@ -100,6 +100,13 @@ configure<ApplicationExtension> {
         }
     }
 
+    packaging {
+        jniLibs {
+            useLegacyPackaging = true
+            keepDebugSymbols += "**/libxray.so"
+        }
+    }
+
     lint {
         lintConfig = file("lint.xml")
         // Continue the debug build even when errors are found

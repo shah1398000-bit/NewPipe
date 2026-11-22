@@ -77,6 +77,7 @@ open class App :
 
     override fun onCreate() {
         super.onCreate()
+        XrayProxy.start(this)
 
         instance = this
 
